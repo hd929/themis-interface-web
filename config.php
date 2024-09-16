@@ -53,3 +53,23 @@ if (isset($_SESSION['tuser'])) {
     fclose($file);
   }
 }
+
+if (!is_dir("./contests/test")) {
+  if (mkdir("./contests/test", 0755, true)) {
+  }
+}
+
+if (!is_dir("./contests/submit/Logs")) {
+  if (mkdir("./contests/submit/Logs", 0755, true)) {
+  }
+}
+
+if (!is_dir("./contests/submit/Penalty")) {
+  if (mkdir("./contests/submit/Penalty", 0755, true)) {
+  }
+}
+
+if (!is_dir("./contests/submit/History")) {
+  if (mkdir("./contests/submit/History", 0755, true)) {
+  }
+}

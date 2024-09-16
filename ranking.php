@@ -1,8 +1,9 @@
-﻿<script src="js/pace.min.js"></script>
-<link rel="stylesheet" href="/css/pace-theme-minimal.css">
+﻿<script src="./js/pace.min.js"></script>
+<link rel="stylesheet" href="./css/pace-theme-minimal.css">
 <?php
-include("config.php");
-include("functions.php");
+include("./config.php");
+include("./functions.php");
+
 date_default_timezone_set("Asia/Bangkok");
 $YYYY = date('Y', time());
 $dir = $logsDir;

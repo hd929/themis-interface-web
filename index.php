@@ -352,7 +352,7 @@ include("config.php");
             <a href=/ide.php title="IDE Online"><span class="glyphicon glyphicon-console text-info"></span> IDE</a>
           </li>
           <li>
-            <a href=ranking.php title="Bảng Rank">
+            <a href="./ranking.php" title="Bảng Rank">
               <span class="glyphicon glyphicon-stats glyphicon-stats text-info"></span> Rank
             </a>
           </li>
@@ -427,12 +427,12 @@ include("config.php");
     } else {
       $message = "Đã hết thời gian nộp bài!";
     }
-    ?>
+  ?>
 
     <!-- Modal -->
     <?php
     if (!$err) {
-      ?>
+    ?>
       <div class="modal modal-message modal-success fade" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -448,9 +448,9 @@ include("config.php");
       </div>
       ?>
 
-      <?php
+    <?php
     } else {
-      ?>
+    ?>
       <div class="modal modal-message modal-warning fade" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -464,7 +464,7 @@ include("config.php");
           </div>
         </div>
       </div>
-      <?php
+  <?php
     }
   }
   ?>
@@ -533,21 +533,21 @@ include("config.php");
 <script src=js/jquery-latest.js></script>
 <script src=js/bootstrap.js></script>
 <script>
-  var refreshId = setInterval(function () {
+  var refreshId = setInterval(function() {
     $("#logs").load("logs.php");
     $("#timer").load("timer.php")
   }, 1000);
-  var refreshId = setInterval(function () {
+  var refreshId = setInterval(function() {
     $("#status").load("status.php");
     $("#timer").load("timer.php")
   }, 1000);
 </script>
 <script>
   $('#exampleModal').modal('show');
-  $('#exampleModal').on('hidden.bs.modal', function () {
+  $('#exampleModal').on('hidden.bs.modal', function() {
     window.history.back();
   })
-  $(document).keyup(function (e) {
+  $(document).keyup(function(e) {
     if (e.keyCode) {
       $('#exampleModal').modal('hide');
     }

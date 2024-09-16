@@ -77,7 +77,8 @@ include("functions.php");
   }
 
   .CodeMirror {
-    border: 2px inset #dee
+    border-radius: 5px;
+    border: 2px solid rgba(60, 9, 108, 0.4)
   }
 
   body {
@@ -153,7 +154,8 @@ include("functions.php");
   #body {
     padding-top: 15px;
     padding-bottom: 15px;
-    background: transparent url('/images/bg.png') scroll top left repeat
+    background: transparent url('/images/bg.png') scroll top left repeat;
+    border-radius: 10px;
   }
 
   @media(min-width:992px) {
@@ -275,11 +277,11 @@ include("functions.php");
   nav.navbar-findcond ul.navbar-nav a:visited,
   nav.navbar-findcond ul.navbar-nav a:focus,
   nav.navbar-findcond ul.navbar-nav a:active {
-    background: #428bca;
+    background: #212529;
   }
 
   nav.navbar-findcond ul.navbar-nav a:hover {
-    border-color: #f14444;
+    border-color: #5a189a;
     color: yellow;
     font-weight: bolder;
   }
@@ -314,44 +316,45 @@ include("functions.php");
   }
 
   nav.navbar-findcond ul.dropdown-menu>li>a:hover {
-    background: #f14444;
+    background: #3a0ca3;
     color: #fff;
   }
 
   nav.navbar-findcond span.badge {
-    background: #f14444;
+    background: #3a0ca3;
     font-weight: normal;
     font-size: 11px;
     margin: 0 4px;
   }
 
   nav.navbar-findcond span.badge.new {
-    background: rgba(255, 0, 0, 0.8);
+    background: #3a0ca3;
     color: #fff;
   }
 </style>
 <nav class="navbar navbar-findcond navbar-fixed-top" role=navigation>
-  <div class=container>
-    <div class=navbar-header>
-      <button type=button class=navbar-toggle data-toggle=collapse data-target=.navbar-collapse>
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle=collapse data-target=.navbar-collapse>
         <span class=sr-only>Toggle navigation</span>
         <span class=icon-bar></span>
         <span class=icon-bar></span>
         <span class=icon-bar></span>
       </button>
-      <a class=navbar-brand href=#>&middot; Hệ thống nộp bài trực tuyến.</a>
+      <a class="navbar-brand" href='/'>Hệ thống chấm bài CYB</a>
     </div>
     <div class="navbar-collapse collapse">
-      <div class="navbar-form navbar-right">
+      <div class="navbar-right">
         <ul class="nav navbar-nav">
-          <li role="presentation"><a href=/index.php title="Trang Chủ"><span class="glyphicon glyphicon-home text-success"></span> Home</a></li>
-          <!-- <li role="presentation"><a href=/chatbox/ title="Phòng Chat"><span class="glyphicon glyphicon-comment text-success"></span> Chatbox <?php echo '<span class="badge new"><b>' . $numchat . '</b></span>'; ?></a></li> -->
-          <li role="presentation"><a href=ranking.php title="Bảng Rank"><span class="glyphicon glyphicon-stats glyphicon-stats text-success"></span> Rank</a></li>
-          <!-- <li role="presentation"><a href=/sms.php title="Tin Nhắn"><span class="glyphicon glyphicon-envelope text-success"></span> Sms <?php if ($newmess) {
-                                                                                                                                                echo '<span class="badge new"><b>' . $newmess . '</b></span>';
-                                                                                                                                              } ?></a></li> -->
-          <li role="presentation"><a href=repass.php title="Đổi mật khẩu"><span class="glyphicon glyphicon-user text-success"></span> Thí sinh: <?php echo $_SESSION['tname']; ?></a></li>
-          <li role="presentation"><a href=logout.php title="Đăng Xuất"><span class="glyphicon glyphicon-off text-success"></span> Thoát</a></li>
+          <li role="presentation"><a href="/" title="Trang Chủ"><span class="glyphicon glyphicon-home text-info"></span>
+              Home</a></li>
+          <li role="presentation"><a href="ranking.php" title="Bảng Rank"><span
+                class="glyphicon glyphicon-stats glyphicon-stats text-info"></span> Rank</a></li>
+          <li role="presentation"><a href="repass.php" title="Đổi mật khẩu"><span
+                class="glyphicon glyphicon-user text-info"></span> Thí sinh: <?php echo $_SESSION['tname']; ?></a>
+          </li>
+          <li role="presentation"><a href="logout.php" title="Đăng Xuất"><span
+                class="glyphicon glyphicon-off text-info"></span> Thoát</a></li>
         </ul>
       </div>
     </div>
@@ -454,7 +457,8 @@ print "Hello World!\n"
     $code = $_POST['code'];
     $code = str_replace("system", "sistem", $code);
     $file = $_POST['file'];
-    if ($str != $ten) $ten = '';
+    if ($str != $ten)
+      $ten = '';
     if (!$ten || !$code) {
       $err = "Tên bài hoặc code không hợp lệ.";
     } else if ($file != 'cpp' && $file != 'pas' && $file != 'java' && $file != 'py' && $file != 'c') {
@@ -507,8 +511,9 @@ print "Hello World!\n"
       <br>
       <?php
       if ($err) {
-      ?>
-        <div class="modal modal-message modal-warning fade" id="warningModal" tabindex="-1" role="dialog" aria-hidden="true">
+        ?>
+        <div class="modal modal-message modal-warning fade" id="warningModal" tabindex="-1" role="dialog"
+          aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header"><i class="glyphicon glyphicon-warning-sign"></i></div>
@@ -521,11 +526,12 @@ print "Hello World!\n"
             </div>
           </div>
         </div>
-      <?php
+        <?php
       }
       if ($message) {
-      ?>
-        <div class="modal modal-message modal-success fade" id="successModal" tabindex="-1" role="dialog" aria-hidden="true">
+        ?>
+        <div class="modal modal-message modal-success fade" id="successModal" tabindex="-1" role="dialog"
+          aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header"><i class="glyphicon glyphicon-check"></i></div>
@@ -538,21 +544,21 @@ print "Hello World!\n"
             </div>
           </div>
         </div>
-      <?php
+        <?php
       }
       ?>
       <script>
         $("#successModal").modal("show");
-        $("#successModal").on("hidden.bs.modal", function() {
+        $("#successModal").on("hidden.bs.modal", function () {
           window.location = "/index.php"
         });
-        $(document).keyup(function(a) {
+        $(document).keyup(function (a) {
           if (a.keyCode) {
             $("#successModal").modal("hide")
           }
         });
         $("#warningModal").modal("show");
-        $(document).keyup(function(a) {
+        $(document).keyup(function (a) {
           if (a.keyCode) {
             $("#successModal").modal("hide")
           }
@@ -560,16 +566,20 @@ print "Hello World!\n"
       </script>
       <center>
         <h2>Code</h2>
-      </center> <br>
-      <div><textarea name=code id=cpp-code class=form-control>
-#include <iostream>
+      </center>
+      <br />
+      <div>
+        <textarea name=code id=cpp-code class=form-control>
+#include <bits/stdc++.h>
 using namespace std;
 
 int main() {
   // your code goes here
   return 0;
 }
-</textarea></div><br />
+</textarea>
+      </div>
+      <br />
       <center>
         <div class=form-inline>
           <input type=submit name=submit class="btn btn-success" value="Submit" />
@@ -579,7 +589,7 @@ int main() {
               if (x == "") {
                 x = "default"
               }
-              var list = ["default", "3024-day", "3024-night", "abcdef", "ambiance", "base16-dark", "base16-light", "bespin", "blackboard", "cobalt", "colorforth", "dracula", "duotone-dark", "duotone-light", "eclipse", "elegant", "erlang-dark", "hopscotch", "icecoder", "isotope", "lesser-dark", "liquibyte", "material", "mbo", "mdn-like", "midnight", "monokai", "neat", "neo", "night", "panda-syntax", "paraiso-dark", "paraiso-light", "pastel-on-dark", "railscasts", "rubyblue", "seti", "solarized dark", "solarized light", "the-matrix", "tomorrow-night-bright", "tomorrow-night-eighties", "ttcn", "twilight", "vibrant-ink", "xq-dark", "xq-light", "yeti", "zenburn", ];
+              var list = ["default", "3024-day", "3024-night", "abcdef", "ambiance", "base16-dark", "base16-light", "bespin", "blackboard", "cobalt", "colorforth", "dracula", "duotone-dark", "duotone-light", "eclipse", "elegant", "erlang-dark", "hopscotch", "icecoder", "isotope", "lesser-dark", "liquibyte", "material", "mbo", "mdn-like", "midnight", "monokai", "neat", "neo", "night", "panda-syntax", "paraiso-dark", "paraiso-light", "pastel-on-dark", "railscasts", "rubyblue", "seti", "solarized dark", "solarized light", "the-matrix", "tomorrow-night-bright", "tomorrow-night-eighties", "ttcn", "twilight", "vibrant-ink", "xq-dark", "xq-light", "yeti", "zenburn",];
               for (var i = 0; i < list.length; i++) {
                 if (x == list[i]) {
                   document.write("<option selected>" + x + "</option>")
@@ -619,7 +629,8 @@ int main() {
   $files1 = scandir($dir);
   $filename = '[' . $user['username'] . ']';
   for ($i = 2; $i < sizeof($files1); $i++) {
-    if (!strpos($files1[$i], $filename)) continue;
+    if (!strpos($files1[$i], $filename))
+      continue;
     $file = strstr($files1[$i], '.');
     $start = strlen($user['username']) + strlen($user['id']) + 3;
     $end = strlen($files1[$i]) - strlen($file) - $start - 1;
@@ -649,15 +660,17 @@ int main() {
   </script>
   <?php
   echo '<br/><br/><center><h4>Danh sách các bài đã nộp :</h4></center><br/><div class="table-responsive"><table class="table table-condensed" style = "font-size:16px;"><tr class = "info">';
-  $dir    = './' . $hisDir;
+  $dir = './' . $hisDir;
   $files1 = scandir($dir);
   $ok = 0;
   $filename = '[' . $user['username'] . ']';
   $num = 0;
   for ($i = 2; $i < sizeof($files1); $i++) {
-    if (!strpos($files1[$i], $filename)) continue;
+    if (!strpos($files1[$i], $filename))
+      continue;
     $num++;
-    if ($num % 7 == 1) echo '</tr><tr class = "info">';
+    if ($num % 7 == 1)
+      echo '</tr><tr class = "info">';
     $file = strstr($files1[$i], '.');
     $start = strlen($user['username']) + strlen($user['id']) + 3;
     $end = strlen($files1[$i]) - strlen($file) - $start - 1;

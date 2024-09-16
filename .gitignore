@@ -1,3 +1,4 @@
 *.log
 contests/submit/Penalty/*.cpp
-contests/submit/History/*.cpp
+contests/submit/History/
+contests/test/

@@ -7,9 +7,9 @@ include("config.php");
 <meta charset="utf-8" />
 <title>CYB - TiK35</title>
 <meta name=viewport content="width=device-width, initial-scale=1.0">
-<link href=css/jumbotron.css rel=stylesheet>
-<link href=css/bootstrap.css rel=stylesheet>
-<link rel=stylesheet href=/css/pace-theme-minimal.css>
+<link href="./css/jumbotron.css" rel="stylesheet">
+<link href="./css/bootstrap.css" rel="stylesheet">
+<link href="./css/pace-theme-minimal.css" rel="stylesheet">
 <style>
   body {
     font-family: sans-serif;
@@ -31,8 +31,18 @@ include("config.php");
   }
 
   .glyphicon-refresh-animate {
-    -animation: spin .7s infinite linear;
+    animation: spin .7s infinite linear;
     -webkit-animation: spin2 .7s infinite linear
+  }
+
+  @keyframes spin2 {
+    from {
+      -webkit-transform: rotate(0deg)
+    }
+
+    to {
+      -webkit-transform: rotate(360deg)
+    }
   }
 
   @-webkit-keyframes spin2 {
@@ -128,7 +138,8 @@ include("config.php");
   #body {
     padding-top: 15px;
     padding-bottom: 15px;
-    background: transparent url('/images/bg.png') scroll top left repeat
+    background: transparent url('/images/bg.png') scroll top left repeat;
+    border-radius: 10px;
   }
 
   @media(min-width:992px) {
@@ -268,11 +279,11 @@ include("config.php");
   nav.navbar-findcond ul.navbar-nav a:visited,
   nav.navbar-findcond ul.navbar-nav a:focus,
   nav.navbar-findcond ul.navbar-nav a:active {
-    background: #428bca;
+    background: #212529;
   }
 
   nav.navbar-findcond ul.navbar-nav a:hover {
-    border-color: #f14444;
+    border-color: #5a189a;
     color: yellow;
     font-weight: bolder;
   }
@@ -307,44 +318,51 @@ include("config.php");
   }
 
   nav.navbar-findcond ul.dropdown-menu>li>a:hover {
-    background: #f14444;
+    background: #3a0ca3;
     color: #fff;
   }
 
   nav.navbar-findcond span.badge {
-    background: #f14444;
+    background: #3a0ca3;
     font-weight: normal;
     font-size: 11px;
     margin: 0 4px;
   }
 
   nav.navbar-findcond span.badge.new {
-    background: rgba(255, 0, 0, 0.8);
+    background: #3a0ca3;
     color: #fff;
   }
 </style>
 <nav class="navbar navbar-findcond navbar-fixed-top" role=navigation>
-  <div class=container>
-    <div class=navbar-header>
-      <button type=button class=navbar-toggle data-toggle=collapse data-target=.navbar-collapse>
+  <div class="container">
+    <div class="navbar-header">
+      <button type=button class="navbar-toggle" data-toggle=collapse data-target=.navbar-collapse>
         <span class=sr-only>Toggle navigation</span>
         <span class=icon-bar></span>
         <span class=icon-bar></span>
         <span class=icon-bar></span>
       </button>
-      <a class=navbar-brand href=#>&middot; Hệ thống chấm bài CYB</a>
+      <a class="navbar-brand" href='/'>Hệ thống chấm bài CYB</a>
     </div>
     <div class="navbar-collapse collapse">
-      <div class="navbar-form navbar-right">
+      <div class="navbar-right">
         <ul class="nav navbar-nav">
-          <li role="presentation"><a href=/ide.php title="IDE Online"><span class="glyphicon glyphicon-console text-success"></span> IDE</a></li>
-          <!-- <li role="presentation"><a href=/chatbox/ title="Phòng Chat"><span class="glyphicon glyphicon-comment text-success"></span> Chatbox <?php echo '<span class="badge new"><b>' . $numchat . '</b></span>'; ?></a></li> -->
-          <li role="presentation"><a href=ranking.php title="Bảng Rank"><span class="glyphicon glyphicon-stats glyphicon-stats text-success"></span> Rank</a></li>
-          <!-- <li role="presentation"><a href=/sms.php title="Tin Nhắn"><span class="glyphicon glyphicon-envelope text-success"></span> Sms <?php if ($newmess) {
-                                                                                                                                                echo '<span class="badge new"><b>' . $newmess . '</b></span>';
-                                                                                                                                              } ?></a></li> -->
-          <li role="presentation"><a href=repass.php title="Đổi mật khẩu"><span class="glyphicon glyphicon-user text-success"></span> Thí sinh: <?php echo $_SESSION['tname']; ?></a></li>
-          <li role="presentation"><a href=logout.php title="Đăng Xuất"><span class="glyphicon glyphicon-off text-success"></span> Thoát</a></li>
+          <li>
+            <a href=/ide.php title="IDE Online"><span class="glyphicon glyphicon-console text-info"></span> IDE</a>
+          </li>
+          <li>
+            <a href=ranking.php title="Bảng Rank">
+              <span class="glyphicon glyphicon-stats glyphicon-stats text-info"></span> Rank
+            </a>
+          </li>
+          <li>
+            <a href=repass.php title="Đổi mật khẩu"><span class="glyphicon glyphicon-user text-info"></span> Thí
+              sinh: <?php echo $_SESSION['tname']; ?></a>
+          </li>
+          <li>
+            <a href=logout.php title="Đăng Xuất"><span class="glyphicon glyphicon-off text-info"></span> Thoát</a>
+          </li>
         </ul>
       </div>
     </div>
@@ -386,9 +404,9 @@ include("config.php");
         $_SESSION['prb' . $temp[0] . $extension] = strtotime(date('Y-m-d H:i:s'));
         $dir = $uploadDir;
         $his = $hisDir;
-        $source = $his . "/" .  $user['id'] . "[" . $user['username'] . "][" . $temp[0] . "]." . $extension;
-        $dest = $dir . "/" .  $user['id'] . "[" . $user['username'] . "][" . $temp[0] . "]." . $extension;
-        move_uploaded_file($_FILES["file"]["tmp_name"], $his . "/" .  $user['id'] . "[" . $user['username'] . "][" . $temp[0] . "]." . $extension);
+        $source = $his . "/" . $user['id'] . "[" . $user['username'] . "][" . $temp[0] . "]." . $extension;
+        $dest = $dir . "/" . $user['id'] . "[" . $user['username'] . "][" . $temp[0] . "]." . $extension;
+        move_uploaded_file($_FILES["file"]["tmp_name"], $his . "/" . $user['id'] . "[" . $user['username'] . "][" . $temp[0] . "]." . $extension);
         $fp = fopen($source, "r");
         $data = fread($fp, filesize($source));
         $data = str_replace("system", "sistem", $data);
@@ -409,12 +427,12 @@ include("config.php");
     } else {
       $message = "Đã hết thời gian nộp bài!";
     }
-  ?>
+    ?>
 
     <!-- Modal -->
     <?php
     if (!$err) {
-    ?>
+      ?>
       <div class="modal modal-message modal-success fade" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -430,9 +448,9 @@ include("config.php");
       </div>
       ?>
 
-    <?php
+      <?php
     } else {
-    ?>
+      ?>
       <div class="modal modal-message modal-warning fade" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -446,7 +464,7 @@ include("config.php");
           </div>
         </div>
       </div>
-  <?php
+      <?php
     }
   }
   ?>
@@ -454,7 +472,8 @@ include("config.php");
     Nộp bài:
     <div class=form-group>
       <input type=file name=file id=file accept=*.* class=form-control>
-      <button type="submit" name="upload" class="btn btn-success"><span class="glyphicon glyphicon-cloud-upload" aria-hidden="true"></span> Nộp</button>
+      <button type="submit" name="upload" class="btn btn-success"><span class="glyphicon glyphicon-cloud-upload"
+          aria-hidden="true"></span> Nộp</button>
     </div>
   </form>
 </div>
@@ -477,34 +496,11 @@ include("config.php");
           ?>
         </div>
       </div>
-      <p><a class="btn btn-default" href=<?php echo $problemsDir . '/' . $problemsFile; ?> role=button><span class="glyphicon glyphicon glyphicon-download-alt glyphicon-download-alt-animate"></span> Tải về</a></p>
-      <!-- <div class="panel panel-primary">
-        <div class=panel-heading>
-          <h2 class=panel-title>Test mẫu</h2>
-        </div>
-        <div class="list-group scrolllist">
-          <?php
-          $dir = opendir($examTestDir);
-          while ($file = readdir($dir)) {
-            if ($file != "." && $file != ".." && !is_file($examTestDir . "/" . $file)) {
-              echo '<li class="list-group-item list-group-item-dark">';
-              echo "<h4>Bài: " . $file . "</h4>";
-              $subdir = opendir($examTestDir . "/" . $file);
-              echo "<p>";
-              while ($subfile = readdir($subdir)) {
-                if ($subfile != "." && $subfile != ".." && !is_file($examTestDir . "/" . $file . "/" . $subfile)) {
-                  echo "<a href='" . $examTestDir . "/" . $file . "/" . $subfile . "'>" . $subfile . "</a> | ";
-                }
-              }
-              echo "</p>";
-              echo '</li>';
-              closedir($subdir);
-            }
-          }
-          closedir($dir);
-          ?> </div>
-      </div> -->
-      <!-- <p><a class="btn btn-default" href=<?php echo $examTestDir . '/' . $examTestFile; ?> role=button><span class="glyphicon glyphicon glyphicon-download-alt glyphicon-download-alt-animate"></span> Tải về</a></p> -->
+      <p>
+        <a class="btn btn-default" href=<?php echo $problemsDir . '/' . $problemsFile; ?> role=button>
+          <span class="glyphicon glyphicon glyphicon-download-alt glyphicon-download-alt-animate"></span> Tải về
+        </a>
+      </p>
     </div>
     <div class="col-md-4">
       <div class="panel panel-primary">
@@ -519,7 +515,7 @@ include("config.php");
     <div class=col-md-4>
       <div class="panel panel-primary">
         <div class=panel-heading>
-          <h2 class=panel-title>Kết quả chấm bài</h2>
+          <h2 class=panel-title>Kết quả</h2>
         </div>
         <div class="list-group scrolllist">
           <div id=logs> Đang tải... </div>
@@ -537,21 +533,21 @@ include("config.php");
 <script src=js/jquery-latest.js></script>
 <script src=js/bootstrap.js></script>
 <script>
-  var refreshId = setInterval(function() {
+  var refreshId = setInterval(function () {
     $("#logs").load("logs.php");
     $("#timer").load("timer.php")
   }, 1000);
-  var refreshId = setInterval(function() {
+  var refreshId = setInterval(function () {
     $("#status").load("status.php");
     $("#timer").load("timer.php")
   }, 1000);
 </script>
 <script>
   $('#exampleModal').modal('show');
-  $('#exampleModal').on('hidden.bs.modal', function() {
+  $('#exampleModal').on('hidden.bs.modal', function () {
     window.history.back();
   })
-  $(document).keyup(function(e) {
+  $(document).keyup(function (e) {
     if (e.keyCode) {
       $('#exampleModal').modal('hide');
     }

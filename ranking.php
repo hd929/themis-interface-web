@@ -94,11 +94,11 @@ function get_score_pen($username, $problem, $score)
   <title>Bảng điểm</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="refresh" content="15" />
-  <link rel="stylesheet" href="../css_hy/clear.css" type="text/css" charset="utf-8" />
-  <link rel="stylesheet" href="../css_hy/style.css" type="text/css" charset="utf-8" />
-  <link rel="stylesheet" href="../css_hy/datatable.css" type="text/css" charset="utf-8" />
-  <link rel="stylesheet" href="../css_hy/table-form.css" type="text/css" charset="utf-8" />
-  <link rel="stylesheet" href="../css_hy/user.css" type="text/css" charset="utf-8" />
+  <link rel="stylesheet" href="./css_hy/clear.css" type="text/css" charset="utf-8" />
+  <link rel="stylesheet" href="./css_hy/style.css" type="text/css" charset="utf-8" />
+  <link rel="stylesheet" href="./css_hy/datatable.css" type="text/css" charset="utf-8" />
+  <link rel="stylesheet" href="./css_hy/table-form.css" type="text/css" charset="utf-8" />
+  <link rel="stylesheet" href="./css_hy/user.css" type="text/css" charset="utf-8" />
   <style type="text/css">
     body {
       font-family: Consolas;

@@ -26,10 +26,10 @@ while ($file = readdir($dir)) {
         $str = "Đã chấm xong!";
     } else
       $str = "Đang đợi chấm...";
-    if ($str == "0.00")
-      echo ' <span class="label label-danger label-small">' . $str . '</span>';
+    if ($str == "0,00")
+      echo ' <span class="label label-danger label-small" style="position: relative; top: 4px">' . $str . '</span>';
     else
-      echo ' <span class="label label-info label-small">' . $str . '</span>';
+      echo ' <span class="label label-info label-small" style="position: relative; top: 4px">' . $str . '</span>';
     $length = strlen($file);
     $tenfile = substr($file, 0, $length - 4);
     $filesub = $uploadDir . "/" . $tenfile;

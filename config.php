@@ -34,11 +34,6 @@ $penalty = 1;
 $score_pen = 0.1;
 // num chat
 
-$file = @fopen('chatbox/log.txt', 'r');
-$numchat = fread($file, filesize('chatbox/log.txt'));
-if (!$numchat) $numchat = 0;
-if (filesize('chatbox/log.html') == 0) $numchat = 0;
-fclose($file);
 // new message
 if (isset($_SESSION['tuser'])) {
   $user['id'] = $_SESSION['tid'];

@@ -1,6 +1,7 @@
 <?php
 include("init.php");
 include("config.php");
+error_reporting(E_ERROR | E_WARNING | E_PARSE);
 $dir = opendir($logsDir);
 $session = $user['username'];
 while ($file = readdir($dir)) {

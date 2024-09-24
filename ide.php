@@ -2,6 +2,7 @@
 include("init.php");
 include("config.php");
 include("functions.php");
+error_reporting(E_ERROR | E_WARNING | E_PARSE);
 ?>
 <!doctype html>
 <meta charset="utf-8" />
@@ -511,7 +512,7 @@ print "Hello World!\n"
       <br>
       <?php
       if ($err) {
-        ?>
+      ?>
         <div class="modal modal-message modal-warning fade" id="warningModal" tabindex="-1" role="dialog"
           aria-hidden="true">
           <div class="modal-dialog" role="document">
@@ -526,10 +527,10 @@ print "Hello World!\n"
             </div>
           </div>
         </div>
-        <?php
+      <?php
       }
       if ($message) {
-        ?>
+      ?>
         <div class="modal modal-message modal-success fade" id="successModal" tabindex="-1" role="dialog"
           aria-hidden="true">
           <div class="modal-dialog" role="document">
@@ -544,21 +545,21 @@ print "Hello World!\n"
             </div>
           </div>
         </div>
-        <?php
+      <?php
       }
       ?>
       <script>
         $("#successModal").modal("show");
-        $("#successModal").on("hidden.bs.modal", function () {
+        $("#successModal").on("hidden.bs.modal", function() {
           window.location = "/index.php"
         });
-        $(document).keyup(function (a) {
+        $(document).keyup(function(a) {
           if (a.keyCode) {
             $("#successModal").modal("hide")
           }
         });
         $("#warningModal").modal("show");
-        $(document).keyup(function (a) {
+        $(document).keyup(function(a) {
           if (a.keyCode) {
             $("#successModal").modal("hide")
           }
@@ -589,7 +590,7 @@ int main() {
               if (x == "") {
                 x = "default"
               }
-              var list = ["default", "3024-day", "3024-night", "abcdef", "ambiance", "base16-dark", "base16-light", "bespin", "blackboard", "cobalt", "colorforth", "dracula", "duotone-dark", "duotone-light", "eclipse", "elegant", "erlang-dark", "hopscotch", "icecoder", "isotope", "lesser-dark", "liquibyte", "material", "mbo", "mdn-like", "midnight", "monokai", "neat", "neo", "night", "panda-syntax", "paraiso-dark", "paraiso-light", "pastel-on-dark", "railscasts", "rubyblue", "seti", "solarized dark", "solarized light", "the-matrix", "tomorrow-night-bright", "tomorrow-night-eighties", "ttcn", "twilight", "vibrant-ink", "xq-dark", "xq-light", "yeti", "zenburn",];
+              var list = ["default", "3024-day", "3024-night", "abcdef", "ambiance", "base16-dark", "base16-light", "bespin", "blackboard", "cobalt", "colorforth", "dracula", "duotone-dark", "duotone-light", "eclipse", "elegant", "erlang-dark", "hopscotch", "icecoder", "isotope", "lesser-dark", "liquibyte", "material", "mbo", "mdn-like", "midnight", "monokai", "neat", "neo", "night", "panda-syntax", "paraiso-dark", "paraiso-light", "pastel-on-dark", "railscasts", "rubyblue", "seti", "solarized dark", "solarized light", "the-matrix", "tomorrow-night-bright", "tomorrow-night-eighties", "ttcn", "twilight", "vibrant-ink", "xq-dark", "xq-light", "yeti", "zenburn", ];
               for (var i = 0; i < list.length; i++) {
                 if (x == list[i]) {
                   document.write("<option selected>" + x + "</option>")

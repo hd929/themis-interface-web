@@ -2,6 +2,7 @@
 include("init.php");
 include("functions.php");
 include("config.php");
+error_reporting(E_ERROR | E_WARNING | E_PARSE);
 ?>
 <!doctype html>
 <meta charset="utf-8" />

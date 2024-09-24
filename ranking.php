@@ -3,6 +3,7 @@
 <?php
 include("./config.php");
 include("./functions.php");
+error_reporting(E_ERROR | E_WARNING | E_PARSE);
 
 date_default_timezone_set("Asia/Bangkok");
 $YYYY = date('Y', time());

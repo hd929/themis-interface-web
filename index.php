@@ -487,10 +487,15 @@ error_reporting(E_ERROR | E_WARNING | E_PARSE);
         </div>
         <div class="list-group scrolllist">
           <?php
+          if (!is_dir("./contests/problems")) {
+            if (mkdir("./contests/problems", 0755, true)) {
+            }
+          }
+
           $dir = opendir($problemsDir);
           while ($file = readdir($dir)) {
             if ($file != "." && $file != ".." && substr($file, 0, strlen($file) - 4) != "allproblems") {
-              echo "<a href='" . $problemsDir . "/" . $file . "' class='list-group-item list-group-item-action list-group-item-primary'>" . $file . "</a>";
+              echo "<a href='view_problem.php?file=" . urlencode($file) . "' class='list-group-item list-group-item-action list-group-item-primary'>" . $file . "</a>";
             }
           }
           closedir($dir);

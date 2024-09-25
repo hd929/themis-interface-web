@@ -495,18 +495,14 @@ error_reporting(E_ERROR | E_WARNING | E_PARSE);
           $dir = opendir($problemsDir);
           while ($file = readdir($dir)) {
             if ($file != "." && $file != ".." && substr($file, 0, strlen($file) - 4) != "allproblems") {
-              echo "<a href='view_problem.php?file=" . urlencode($file) . "' class='list-group-item list-group-item-action list-group-item-primary'>" . $file . "</a>";
+              $basename = pathinfo($file, PATHINFO_FILENAME);
+              echo "<a href='view_problem.php?file=" . urlencode($file) . "' class='list-group-item list-group-item-action list-group-item-primary'>" . $basename . "</a>";
             }
           }
           closedir($dir);
           ?>
         </div>
       </div>
-      <p>
-        <a class="btn btn-default" href=<?php echo $problemsDir . '/' . $problemsFile; ?> role=button>
-          <span class="glyphicon glyphicon glyphicon-download-alt glyphicon-download-alt-animate"></span> Tải về
-        </a>
-      </p>
     </div>
     <div class="col-md-4">
       <!-- <div class="panel panel-primary">

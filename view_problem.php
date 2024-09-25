@@ -4,6 +4,7 @@ include("./Parsedown.php");
 
 if (isset($_GET['file'])) {
   $file = urldecode($_GET['file']);
+  $basename = pathinfo($file, PATHINFO_FILENAME);
 
   $filePath = $problemsDir . '/' . $file;
   if (file_exists($filePath) && pathinfo($filePath, PATHINFO_EXTENSION) == 'md') {
@@ -25,7 +26,7 @@ if (isset($_GET['file'])) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Xem đề bài</title>
+  <title>Xem đề bài | <?php echo $basename ?></title>
 
   <!-- Thêm MathJax để hỗ trợ công thức toán học -->
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
@@ -36,6 +37,7 @@ if (isset($_GET['file'])) {
   <!-- Custom CSS -->
   <style>
     body {
+      font-size: 20px;
       padding-top: 20px;
       background-color: #f8f9fa;
     }
@@ -53,10 +55,6 @@ if (isset($_GET['file'])) {
       margin-top: 20px;
     }
 
-    .problem-content p {
-      font-size: 1.1em;
-    }
-
     .problem-content pre {
       background-color: #f1f1f1;
       padding: 10px;
@@ -70,7 +68,7 @@ if (isset($_GET['file'])) {
     <!-- Header -->
     <div class="row mb-4">
       <div class="col-md-12 text-center">
-        <h1 class="display-4"><?php echo htmlspecialchars($file); ?></h1>
+        <h1 class="display-4 alert alert-info"><?php echo htmlspecialchars($basename); ?></h1>
         <a href="index.php" class="btn btn-primary mt-3">Quay lại</a>
       </div>
     </div>

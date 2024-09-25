@@ -27,17 +27,25 @@ while ($file = readdir($dir)) {
         $str = "Đã chấm xong!";
     } else
       $str = "Đang đợi chấm...";
-    if ($str == "0,00")
+    if (floatval($str)) {
+      $point = floatval($str);
+      if ($point <= 1)
+        echo ' <span class="label label-danger label-small" style="position: relative; top: 4px">' . $str . '</span>';
+      else if ($point <= 5)
+        echo ' <span class="label label-warning label-small" style="position: relative; top: 4px">' . $str . '</span>';
+      else
+        echo ' <span class="label label-info label-small" style="position: relative; top: 4px">' . $str . '</span>';
+    } else
       echo ' <span class="label label-danger label-small" style="position: relative; top: 4px">' . $str . '</span>';
-    else
-      echo ' <span class="label label-info label-small" style="position: relative; top: 4px">' . $str . '</span>';
     $length = strlen($file);
     $tenfile = substr($file, 0, $length - 4);
     $filesub = $uploadDir . "/" . $tenfile;
-    if (!file_exists($filesub)) {
-      echo '<span class = "badge" style="background-color: transparent; color: green;"><span class="glyphicon glyphicon-ok glyphicon-ok-animate"></span></span>';
-    } else
-      echo '<span class = "badge"><span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span></span>';
+    if (!file_exists($filesub) && $str == "10,00") {
+      echo '<span class = "badge" style="background-color: transparent; color: green;"><span class="glyphicon glyphicon-ok"></span></span>';
+    } else if ($str == "ℱ Dịch lỗi")
+      echo '<span class = "badge" style="background-color: transparent; color: #f0ad4e;"><span class="glyphicon glyphicon-warning-sign"></span></span>';
+    else
+      echo '<span class = "badge" style="background-color: transparent; color: red;"><span class="glyphicon glyphicon-remove"></span></span>';
     echo '</a>';
   }
 }

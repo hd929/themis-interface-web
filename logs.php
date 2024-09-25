@@ -35,7 +35,7 @@ while ($file = readdir($dir)) {
     $tenfile = substr($file, 0, $length - 4);
     $filesub = $uploadDir . "/" . $tenfile;
     if (!file_exists($filesub)) {
-      echo '<span class = "badge"><span class="glyphicon glyphicon-ok glyphicon-ok-animate"></span></span>';
+      echo '<span class = "badge" style="background-color: transparent; color: green;"><span class="glyphicon glyphicon-ok glyphicon-ok-animate"></span></span>';
     } else
       echo '<span class = "badge"><span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span></span>';
     echo '</a>';

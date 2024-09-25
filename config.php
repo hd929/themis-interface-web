@@ -32,22 +32,6 @@ $submitTime = 0;
 $penalty = 1;
 // score penalty
 $score_pen = 0.1;
-// num chat
-
-// new message
-if (isset($_SESSION['tuser'])) {
-  $user['id'] = $_SESSION['tid'];
-  $user['username'] = $_SESSION['tuser'];
-  $user['password'] = $_SESSION['tpass'];
-  $file = @fopen('sms/new/' . $user['username'] . '.txt', 'r');
-  $newmess = 0;
-  if ($file) {
-    $newmess = fread($file, filesize('sms/new/' . $user['username'] . '.txt'));
-    if (!$newmess) $newmess = 0;
-    if (filesize('sms/new/' . $user['username'] . '.txt') == 0) $newmess = 0;
-    fclose($file);
-  }
-}
 
 if (!is_dir("./contests/test")) {
   if (mkdir("./contests/test", 0755, true)) {

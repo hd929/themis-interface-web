@@ -1,5 +1,6 @@
 *.log
 contests/submit/Penalty
 contests/submit/History
+contests/problems
 contests/test/*
 data/account.xml

@@ -32,7 +32,8 @@ if (isset($_GET['file'])) {
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
 
   <!-- Custom CSS -->
   <style>
@@ -83,9 +84,6 @@ if (isset($_GET['file'])) {
       </div>
     </div>
 
-
-    <!-- Thêm Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76Aq9qORP2iRg1gWQIkF1JENe3RwpB6HY49yQf69dKfyPOmY1xX+nc9P+H7pFq5" crossorigin="anonymous"></script>
 </body>
 
 </html>

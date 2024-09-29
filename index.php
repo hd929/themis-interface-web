@@ -505,14 +505,14 @@ error_reporting(E_ERROR | E_WARNING | E_PARSE);
       </div>
     </div>
     <div class="col-md-4">
-      <!-- <div class="panel panel-primary">
+      <div class="panel panel-primary">
         <div class="panel-heading">
           <h2 class="panel-title">Nhật kí nộp bài</h2>
         </div>
         <div class="list-group scrolllist">
           <div id="status"> Đang tải... </div>
         </div>
-      </div> -->
+      </div>
     </div>
     <div class=col-md-4>
       <div class="panel panel-primary">

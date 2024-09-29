@@ -40,12 +40,16 @@ while ($file = readdir($dir)) {
     $length = strlen($file);
     $tenfile = substr($file, 0, $length - 4);
     $filesub = $uploadDir . "/" . $tenfile;
-    if (!file_exists($filesub) && $str == "10,00") {
-      echo '<span class = "badge" style="background-color: transparent; color: green;"><span class="glyphicon glyphicon-ok"></span></span>';
-    } else if ($str == "ℱ Dịch lỗi")
-      echo '<span class = "badge" style="background-color: transparent; color: #f0ad4e;"><span class="glyphicon glyphicon-warning-sign"></span></span>';
-    else
-      echo '<span class = "badge" style="background-color: transparent; color: red;"><span class="glyphicon glyphicon-remove"></span></span>';
+    if (!file_exists($filesub)) {
+      if ($str == "10,00") {
+        echo '<span class = "badge" style="background-color: transparent; color: green;"><span class="glyphicon glyphicon-ok"></span></span>';
+      } else if ($str == "ℱ Dịch lỗi")
+        echo '<span class = "badge" style="background-color: transparent; color: #f0ad4e;"><span class="glyphicon glyphicon-warning-sign"></span></span>';
+      else {
+        echo '<span class = "badge" style="background-color: transparent; color: red;"><span class="glyphicon glyphicon-remove"></span></span>';
+      }
+    } else echo '<span class = "badge" style="background-color: transparent; color: grey;"><span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span></span>';
+
     echo '</a>';
   }
 }

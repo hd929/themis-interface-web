@@ -7,12 +7,6 @@ $description = "";
 $footer = '<i>Copyright © <a href = "http://fb.com/handuy.otaku"><font color = "red"><b>DuyBu</b></font></a><br/>TiK35 - Chuyên Yên Bái</i>'; /// vui lòng tôn trọng quyền tác giả!
 //Thư mục chưa đề (định dạng pdf, jpg hoặc zip)
 $problemsDir = "contests/problems";
-//Tên file đề tổng hợp
-$problemsFile = "Debai.rar";
-//Thư mục chứa test
-$examTestDir = "contests/test";
-//Tên file test tổng hợp
-$examTestFile = "test.rar";
 //Thư mục lưu bài làm trực tuyến của học sinh
 $uploadDir = "contests/submit/";
 //Thư mục chứa file logs
@@ -32,23 +26,3 @@ $submitTime = 0;
 $penalty = 1;
 // score penalty
 $score_pen = 0.1;
-
-if (!is_dir("./contests/test")) {
-  if (mkdir("./contests/test", 0755, true)) {
-  }
-}
-
-if (!is_dir("./contests/submit/Logs")) {
-  if (mkdir("./contests/submit/Logs", 0755, true)) {
-  }
-}
-
-if (!is_dir("./contests/submit/Penalty")) {
-  if (mkdir("./contests/submit/Penalty", 0755, true)) {
-  }
-}
-
-if (!is_dir("./contests/submit/History")) {
-  if (mkdir("./contests/submit/History", 0755, true)) {
-  }
-}

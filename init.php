@@ -23,17 +23,14 @@ if (!is_dir("./contests/submit/History")) {
   }
 }
 
-$sourceFile = 'account.def.xml'; // File nguồn
-$destinationFile = 'account.xml'; // File đích
+$sourceFile = './data/account.def.xml'; // File nguồn
+$destinationFile = './data/account.xml'; // File đích
 
 // Kiểm tra nếu file account.xml không tồn tại
 if (!file_exists($destinationFile)) {
   // Sao chép file account.def.xml thành account.xml
   if (copy($sourceFile, $destinationFile)) {
-    echo "File account.xml đã được tạo từ account.def.xml.";
   } else {
     echo "Không thể sao chép file.";
   }
-} else {
-  echo "File account.xml đã tồn tại.";
 }

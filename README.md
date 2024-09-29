@@ -13,3 +13,8 @@
 ![IDE](https://user-images.githubusercontent.com/20833690/43200382-a0056874-903f-11e8-9bc5-0deb65cec071.png)
 ![Rank](https://user-images.githubusercontent.com/20833690/43200388-a0e12e54-903f-11e8-9fe0-7a01032255dd.png)
 ![Upload](https://user-images.githubusercontent.com/20833690/43200389-a11a1778-903f-11e8-9631-417551dc39f6.png)
+
+tài khoản:
+
+- user: admin,
+  password: admin

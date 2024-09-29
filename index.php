@@ -344,7 +344,7 @@ error_reporting(E_ERROR | E_WARNING | E_PARSE);
         <span class=icon-bar></span>
         <span class=icon-bar></span>
       </button>
-      <a class="navbar-brand" href='/'>Hệ thống chấm bài CYB</a>
+      <a class="navbar-brand" href='/'>Hệ thống chấm bài OWOJ</a>
     </div>
     <div class="navbar-collapse collapse">
       <div class="navbar-right">

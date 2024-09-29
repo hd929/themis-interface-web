@@ -1,8 +1,8 @@
 ﻿<?php
 //Tên kỳ thi
-$contestName = "OJ - CYB";
+$contestName = "OWOJ";
 //Mô tả kỳ thi
-$description = "Chuyên Yên Bái";
+$description = "";
 //footer
 $footer = '<i>Copyright © <a href = "http://fb.com/handuy.otaku"><font color = "red"><b>DuyBu</b></font></a><br/>TiK35 - Chuyên Yên Bái</i>'; /// vui lòng tôn trọng quyền tác giả!
 //Thư mục chưa đề (định dạng pdf, jpg hoặc zip)
